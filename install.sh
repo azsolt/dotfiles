@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 
+DOTFILES_ROOT="`pwd`"
+
 function do_install() {
     # copy all files from config to ~/.config
     rsync -av config/* ~/.config
 
-    # copy all .files to ~
-    rsync -av sources/* ~/.sources
-
     # link every .symlink file into ~
-    for source in `find . -maxdepth 2 -name \*.symlink`
+    for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink`
     do
         dest="$HOME/.`basename \"${source%.*}\"`"
 
         if [ -f $dest ]; then
             mv $dest $dest\.backup
+            echo "backing up existing $dest"
         fi
 
         rm -rf $dest
