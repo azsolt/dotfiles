@@ -5,7 +5,7 @@ function do_install() {
     rsync -av config/* ~/.config
 
     # copy all .files to ~
-    rsync -av --exclude=".git" .[^.]* ~
+    rsync -av sources/* ~/.sources
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
