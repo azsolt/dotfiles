@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 function do_install() {
-    # install function to be added
+    # copy all files from config to ~/.config
+    rsync -av config/* ~/.config
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
