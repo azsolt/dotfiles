@@ -34,7 +34,7 @@ done
 
 apt-get autoremove -y
 
-oh_my_zsh
+#oh_my_zsh
 
 # clone azsolt/dotfiles and run install.sh
 if which git > /dev/null; then
