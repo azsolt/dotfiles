@@ -41,7 +41,7 @@ if which git > /dev/null; then
     if [ ! -d ~/.dotfiles ]; then
         do_user "git clone https://github.com/azsolt/dotfiles.git ~/.dotfiles"
 
-        if [ -f ~/.dotfiles ]; then
+        if [ -d ~/.dotfiles ]; then
             source ~/.dotfiles/install.sh
         else
             die "Failed to clone azsolt/dotfiles repository"
