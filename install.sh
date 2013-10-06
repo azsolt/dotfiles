@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
-DOTFILES_ROOT="`pwd`"
-
 function do_install() {
     # copy all files from config to ~/.config
-    rsync -av config/* ~/.config
+    rsync -av ~/.dotfiles/config/* ~/.config
 
     # link every .symlink file into ~
-    for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink.sh`
+    for source in `find ~/.dotfiles -maxdepth 2 -name \*.symlink.sh`
     do
         dest="$HOME/.`basename $source .symlink.sh`"
 
