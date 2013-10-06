@@ -6,6 +6,20 @@ function do_install() {
 
     # copy all .files to ~
     rsync -av sources/* ~/.sources
+
+    # link every .symlink file into ~
+    for source in `find . -maxdepth 2 -name \*.symlink`
+    do
+        dest="$HOME/.`basename \"${source%.*}\"`"
+
+        if [ -f $dest ]; then
+            mv $dest $dest\.backup
+        fi
+
+        rm -rf $dest
+        ln -s $source $dest
+        echo "installed $dest"
+    done
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
