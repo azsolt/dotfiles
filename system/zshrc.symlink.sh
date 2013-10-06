@@ -54,5 +54,3 @@ if [ -d ~/.dotfiles ]; then
         source $source
     done
 fi
-
-#b
