@@ -2,11 +2,6 @@
 
 user=$SUDO_USER
 
-do_user() {
-    # run as current logged in user
-    sudo -u $user $1
-}
-
 die() {
     echo $1
     exit
@@ -33,14 +28,12 @@ do
 done
 
 apt-get autoremove -y
-
-#oh_my_zsh
+oh_my_zsh
 
 # clone azsolt/dotfiles and run install.sh
 if which git > /dev/null; then
     if [ ! -d ~/.dotfiles ]; then
-        read
-        do_user "git clone https://github.com/azsolt/dotfiles.git /home/$user/.dotfiles"
+        sudo -u $user git clone https://github.com/azsolt/dotfiles.git ~/.dotfiles
 
         if [ -d ~/.dotfiles ]; then
             source ~/.dotfiles/install.sh
