@@ -7,7 +7,7 @@ function do_install() {
     rsync -av config/* ~/.config
 
     # link every .symlink file into ~
-    for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink`
+    for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink.sh`
     do
         dest="$HOME/.`basename \"${source%.*}\"`"
 
