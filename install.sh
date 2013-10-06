@@ -9,7 +9,7 @@ function do_install() {
     # link every .symlink file into ~
     for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink.sh`
     do
-        dest="$HOME/.`basename \"${source%.*}\"`"
+        dest="$HOME/.`basename $source .symlink.sh`"
 
         if [ -f $dest ]; then
             mv $dest $dest\.backup
