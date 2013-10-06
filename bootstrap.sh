@@ -39,7 +39,7 @@ apt-get autoremove -y
 # clone azsolt/dotfiles and run install.sh
 if which git > /dev/null; then
     if [ ! -d ~/.dotfiles ]; then
-        do_user "git clone https://github.com/azsolt/dotfiles.git ~/.dotfiles"
+        do_user "git clone https://github.com/azsolt/dotfiles.git /home/$user/.dotfiles"
 
         if [ -d ~/.dotfiles ]; then
             source ~/.dotfiles/install.sh
