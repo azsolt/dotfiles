@@ -17,3 +17,5 @@ do
     ln -s $source $dest
     echo "installed $dest"
 done
+
+echo "azsolt dotfiles installed :)"
