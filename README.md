@@ -9,16 +9,12 @@ In the process of making my own dotfiles I used these as references:
 
 ## Installation
 
-Install zsh shell from [robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+If you want to install directly from my repository - remember that this will not allow customization of any sort (like installed apps, pip packages, etc) - then run the command below:
 
-``curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | bash``
+``curl -L https://raw.github.com/azsolt/dotfiles/master/bootstrap.sh | bash``
 
-Then run the following:
-
-```
-git clone https://github.com/azsolt/dotfiles.git ~/.dotfiles
-bash ~/.dotfiles/install.sh
-```
+If you want to customize what applications to install, you must first [fork this repository](https://github.com/azsolt/dotfiles/fork) into your GitHub account. Clone it to your machine, make any changes and push to your repo.
+After that just run the above command pointing to your own bootstrap.sh raw url.
 
 ## Components 
 
@@ -26,3 +22,11 @@ Files
 
 * __*.symlink.sh__ file inside ~/.dotfiles will get symlinked into ~
 * __*.source.sh__ file inside ~/.dotfiles will get sourced by __.zshrc__
+
+### Installed applications
+
+* Git (git)
+* Pip (python-pip), with following packages:
+    * Django
+    * Virtual Environment (virtualenv)
+* Terminator (terminator)
