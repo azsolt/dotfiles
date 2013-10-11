@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 # copy all files from config to ~/.config
+echo "Copying configuration files..."
 rsync -av ~/.dotfiles/config/* ~/.config
+echo "==="
 
 # link every .symlink file into ~
 for source in `find ~/.dotfiles -maxdepth 2 -name \*.symlink.sh`
@@ -10,12 +12,13 @@ do
 
     if [ -f $dest ]; then
         mv $dest $dest\.backup
-        echo "backing up existing $dest"
+        echo "Backing up your current $dest to $dest.backup"
     fi
 
     rm -rf $dest
     ln -s $source $dest
-    echo "installed $dest"
+    echo "Linked $dest to $source"
+    echo "==="
 done
 
-echo "azsolt dotfiles installed :)"
+echo "Dotfiles installed :)"

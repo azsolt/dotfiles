@@ -9,41 +9,47 @@ if [ $USER == root ]; then
     die "bootstrap.sh: do not run as root (sudo)"
 fi
 
-oh_my_zsh() {
-    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | bash
-}
+# installing environment apps
 
 install_apps="
-    git
-    python-pip
+    git 
+    python-pip 
     terminator
 "
 
-for app in $install_apps
-do 
-    echo "Installing $app..."
-    sudo apt-get install -y $app
-done
+echo "Installing apps $install_apps"
+sudo apt-get install -y $install_apps
+echo "==="
 
+# cleaning
+echo "Cleaning..."
 sudo apt-get autoremove -y
-oh_my_zsh
-
-# clone azsolt/dotfiles and run install.sh
-if which git > /dev/null; then
-    if [ ! -d ~/.dotfiles ]; then
-        git clone https://github.com/azsolt/dotfiles.git ~/.dotfiles
-
-        if [ -d ~/.dotfiles ]; then
-            source ~/.dotfiles/install.sh
-        else
-            die "Failed to clone azsolt/dotfiles repository"
-        fi
-    fi
-else
-    die "Git was not installed, </3 check errors and try again"
-fi
+echo "==="
 
 # install pip packages
 if ! which pip > /dev/null; then
     die "Pip not installed"
+fi
+
+echo "Installing oh-my-zsh..."
+# install oh-my-zsh, zsh (shell)
+curl -sL https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | bash
+echo "==="
+
+# clone azsolt/dotfiles
+if which git > /dev/null; then
+    if [ ! -d ~/.dotfiles ]; then
+        echo "Cloning git repository..."
+        git clone https://github.com/azsolt/dotfiles.git ~/.dotfiles
+        echo "==="
+    fi
+else
+    die "Git was not installed, </3 check for errors and try again"
+fi
+
+# install dotfiles
+if [ -d ~/.dotfiles ]; then
+        source ~/.dotfiles/install.sh
+else
+    die "Failed to clone azsolt/dotfiles repository"
 fi
