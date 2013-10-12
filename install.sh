@@ -13,7 +13,7 @@ die() {
 # =====================================================================================
 
 if [ $USER == root ]; then
-    die "bootstrap.sh: do not run as root (sudo)"
+    die "install.sh: do not run as root (sudo)"
 fi
 
 cd ~
