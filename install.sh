@@ -3,6 +3,10 @@
 # folders
 dropbox_dir=~/Dropbox
 app_dir=~/Applications
+
+if [ ! -d $app_dir ]; then
+    mkdir -p $app_dir
+fi
 # =====================================================================================
 
 # functions
@@ -74,7 +78,6 @@ if [ ! -d $app_dir/sublime ]; then
 echo "Installing Sublime Text 3..."
     curl -sL http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3047_x64.tar.bz2 | tar xj
     mv sublime_text_3 $app_dir/sublime
-    ln -s $app_dir/sublime/sublime_text ~/.dotfiles/bin/subl
 echo "==="
 fi
 # =====================================================================================
@@ -86,7 +89,7 @@ echo "==="
 # =====================================================================================
 
 # link every .symlink file into ~
-for source in `find $DOT -maxdepth 2 -name \*.symlink.sh`
+for source in `find ~/.dotfiles -maxdepth 2 -name \*.symlink.sh`
 do
     dest="$HOME/.`basename $source .symlink.sh`"
 
@@ -101,5 +104,9 @@ do
     echo "==="
 done
 # =====================================================================================
+
+if [ $SHELL != "/bin/zsh" ]; then
+    chsh -s /bin/zsh
+fi
 
 echo "Dotfiles installed :)"
