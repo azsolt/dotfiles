@@ -22,6 +22,7 @@ Files
 
 * __*.symlink.sh__ file inside ~/.dotfiles will get symlinked into ~
 * __*.source.sh__ file inside ~/.dotfiles will get sourced by __.zshrc__
+* __/config__ gets copied into __~/.config__
 
 ### Installed applications
 
