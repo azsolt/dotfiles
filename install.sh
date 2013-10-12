@@ -30,6 +30,8 @@ install_apps="
     python-dev
     python-pip
     terminator
+    zsh
+    xclip
 "
 
 echo "Installing apps $install_apps"
