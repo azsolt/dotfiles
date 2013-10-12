@@ -58,7 +58,7 @@ sudo pip install virtualenvwrapper
 # if this was curl install, we must clone our repo
 if [ ! -d ~/.dotfiles ]; then
     echo "Cloning git repository..."
-    git clone git@github.com:azsolt/dotfiles.git ~/.dotfiles
+    git clone https://github.com/azsolt/dotfiles.git ~/.dotfiles
     echo "==="
 fi
 # =====================================================================================
