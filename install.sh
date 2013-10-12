@@ -2,6 +2,7 @@
 
 # folders
 dropbox_dir=~/Dropbox
+app_dir=~/Applications
 # =====================================================================================
 
 # functions
@@ -63,6 +64,16 @@ fi
 echo "Installing Dropbox..."
     ~/.dotfiles/bin/dropbox start -i
 echo "==="
+# =====================================================================================
+
+# sublime-text
+if [ ! -d $app_dir/sublime ]; then
+echo "Installing Sublime Text 3..."
+    curl -sL http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3047_x64.tar.bz2 | tar xj
+    mv sublime_text_3 $app_dir/sublime
+    ln -s $app_dir/Sublime/sublime_text ~/.dotfiles/bin/subl
+echo "==="
+fi
 # =====================================================================================
 
 # copy all files from ~/.dotfiles/config to ~/.config
