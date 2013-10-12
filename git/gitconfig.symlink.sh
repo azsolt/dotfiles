@@ -1,5 +1,5 @@
 [user]
-	name = Azsolt Kasa
+    name = Azsolt Kasa
     email = azsoltkasa@gmail.com
 
 [github]
