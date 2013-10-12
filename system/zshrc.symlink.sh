@@ -48,7 +48,7 @@ source $ZSH/oh-my-zsh.sh
 export WORKON_HOME=~/Envs
 
 if [ ! -d $WORKON_HOME ]; then
-    mkdir -p WORKON_HOME
+    mkdir -p $WORKON_HOME
 fi
 
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then

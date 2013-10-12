@@ -6,7 +6,6 @@
     cursor_color = "#eee8d5"
     foreground_color = "#ffffff"
     show_titlebar = False
-    font = Menlo for Powerline 12
     background_color = "#300a24"
 [layouts]
   [[default]]
