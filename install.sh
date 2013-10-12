@@ -22,8 +22,9 @@ cd ~
 
 install_apps="
     chromium-browser
-    git 
-    python-pip 
+    git
+    python-dev
+    python-pip
     terminator
 "
 
@@ -50,6 +51,8 @@ fi
 if ! which pip > /dev/null; then
     die "Pip not installed"
 fi
+
+sudo pip install virtualenvwrapper
 # =====================================================================================
 
 # if this was curl install, we must clone our repo

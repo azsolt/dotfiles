@@ -44,8 +44,19 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# virtualenvwrapper
+export WORKON_HOME=~/Envs
+
+if [ ! -d $WORKON_HOME ]; then
+    mkdir -p WORKON_HOME
+fi
+
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
 # Customize to your needs...
-export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:~/.dotfiles/bin
 
 # sources every .source.sh file in ~/.dotfiles
 if [ -d ~/.dotfiles ]; then
