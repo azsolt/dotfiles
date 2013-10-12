@@ -26,8 +26,10 @@ Files
 
 ### Installed applications
 
-* Git (git)
-* Pip (python-pip) with virtualenvwrapper
+* Git
+* Pip with virtualenvwrapper
 * Dropbox
 * Chromium Browser
-* Terminator (terminator)
+* Terminator
+* Z Shell
+* X Clip
