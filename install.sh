@@ -71,7 +71,7 @@ if [ ! -d $app_dir/sublime ]; then
 echo "Installing Sublime Text 3..."
     curl -sL http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3047_x64.tar.bz2 | tar xj
     mv sublime_text_3 $app_dir/sublime
-    ln -s $app_dir/Sublime/sublime_text ~/.dotfiles/bin/subl
+    ln -s $app_dir/sublime/sublime_text ~/.dotfiles/bin/subl
 echo "==="
 fi
 # =====================================================================================
