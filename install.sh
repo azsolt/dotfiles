@@ -46,11 +46,9 @@ echo "==="
 # =====================================================================================
 
 # install oh-my-zsh, zsh (shell)
-if ! which zsh > /dev/null; then
-    echo "Installing oh-my-zsh..."
-    curl -sL https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | bash
-    echo "==="
-fi
+echo "Installing oh-my-zsh..."
+curl -sL https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | bash
+echo "==="
 # =====================================================================================
 
 # install pip packages
