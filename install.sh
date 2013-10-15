@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # folders
-dropbox_dir=~/Dropbox
 app_dir=~/Applications
 
 if [ ! -d $app_dir ]; then
@@ -26,7 +25,9 @@ cd ~
 
 install_apps="
     chromium-browser
+    dkms
     git
+    g++
     python-dev
     python-pip
     terminator
@@ -52,11 +53,20 @@ echo "==="
 # =====================================================================================
 
 # install pip packages
-if ! which pip > /dev/null; then
-    die "Pip not installed"
+sudo pip install virtualenvwrapper
+# =====================================================================================
+
+# install node
+if ! which node > /dev/null; then
+    git clone https://github.com/joyent/node.git node
+    cd ~/node
+    ./configure
+    make
+    make install
+    cd ~
+    sudo npm install -g bower
 fi
 
-sudo pip install virtualenvwrapper
 # =====================================================================================
 
 # if this was curl install, we must clone our repo
