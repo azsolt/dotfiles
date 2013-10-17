@@ -33,9 +33,12 @@ install_apps="
     terminator
     zsh
     xclip
+    nodejs
+    ruby1.9.1
 "
 
 echo "Installing apps $install_apps"
+sudo apt-get update
 sudo apt-get install -y $install_apps
 echo "==="
 # =====================================================================================
@@ -56,16 +59,12 @@ echo "==="
 sudo pip install virtualenvwrapper
 # =====================================================================================
 
-# install node
-if ! which node > /dev/null; then
-    git clone https://github.com/joyent/node.git node
-    cd ~/node
-    ./configure
-    make
-    make install
-    cd ~
-    sudo npm install -g bower
-fi
+# install node packages
+sudo npm install -g bower
+sudo npm install -g coffee-script
+
+# install gems
+sudo gem install compass
 
 # =====================================================================================
 
