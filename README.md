@@ -18,18 +18,40 @@ After that just run the above command pointing to your own bootstrap.sh raw url.
 
 ## Components 
 
-Files
-
 * __*.symlink.sh__ file inside ~/.dotfiles will get symlinked into ~
 * __*.source.sh__ file inside ~/.dotfiles will get sourced by __.zshrc__
 * __/config__ gets copied into __~/.config__
+* __/exports__ must be manually imported into correct application
 
-### Installed applications
+## Installed applications
 
-* Git
-* Pip with virtualenvwrapper
-* Dropbox
-* Chromium Browser
-* Terminator
-* Z Shell
-* X Clip
+* chromium-browser
+* dkms
+* git
+* python-dev
+* python-pip
+* terminator
+* zsh
+* oh-my-zsh
+* xclip
+* nodejs
+* ruby
+* dropbox
+* sublime-text
+
+#### Packages
+
+Pip
+* virtualenvwrapper
+
+Node
+* coffee-script
+* bower
+
+Gems
+* compass
+* sass
+
+
+
+
