@@ -27,7 +27,6 @@ install_apps="
     chromium-browser
     dkms
     git
-    g++
     python-dev
     python-pip
     terminator
