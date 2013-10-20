@@ -37,6 +37,9 @@ install_apps="
     ruby1.9.1
 "
 
+# repos
+sudo add-apt-repository ppa:chris-lea/node.js
+
 echo "Installing apps $install_apps"
 sudo apt-get update
 sudo apt-get install -y $install_apps
