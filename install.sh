@@ -33,7 +33,6 @@ install_apps="
     zsh
     xclip
     nodejs
-    npm
     ruby1.9.1
 "
 
