@@ -116,8 +116,4 @@ do
 done
 # =====================================================================================
 
-if [ $SHELL != "/bin/zsh" ]; then
-    chsh -s /bin/zsh
-fi
-
 echo "Dotfiles installed :)"
